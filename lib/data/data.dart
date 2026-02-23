@@ -1,4 +1,5 @@
 import 'package:tridos_task/constants/app_images.dart';
+import 'package:tridos_task/data/news_item.dart';
 import 'package:tridos_task/data/post_model.dart';
 
 class Data {
@@ -190,6 +191,19 @@ class Data {
       description: "Fashion",
       category: "",
       postedBy: "",
+    ),
+  ];
+
+  static final List<NewsItem> newsList = [
+    NewsItem(
+      title: "Croma opens 58 outlets in 6, Croma retails more than 16,000",
+      subtitle:
+          "These companies created a lot of hype when they listed on the...",
+    ),
+    NewsItem(
+      title: "Select Citywalk opens 4 new stores in June",
+      subtitle:
+          "These companies created a lot of hype when they listed on the...",
     ),
   ];
 }

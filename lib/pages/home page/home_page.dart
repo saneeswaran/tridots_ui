@@ -4,7 +4,10 @@ import 'package:tridos_task/data/data.dart';
 import 'package:tridos_task/pages/home%20page/components/category_list.dart';
 import 'package:tridos_task/pages/home%20page/components/head_news.dart';
 import 'package:tridos_task/pages/home%20page/components/home_app_bar.dart';
+import 'package:tridos_task/pages/home%20page/components/latest_news_data.dart';
+import 'package:tridos_task/pages/home%20page/components/news_name.dart';
 import 'package:tridos_task/pages/home%20page/components/see_all_news.dart';
+import 'package:tridos_task/pages/home%20page/components/vertical_news_slider.dart';
 import 'package:tridos_task/widgets/custom_border_posts.dart';
 import 'package:tridos_task/widgets/custom_horizontal_post.dart';
 import 'package:tridos_task/widgets/horizontal_news.dart';
@@ -29,95 +32,19 @@ class HomePage extends StatelessWidget {
             const HorizontalNews(),
             const SizedBox(height: 10),
             const HeadNews(image: AppImages.raghul),
-            VerticalNews(
-              assetName: AppImages.cat1,
-              title: Data.verticalNews[0].title,
-              description: Data.verticalNews[0].description,
-              hashTags: Data.verticalNews[0].category,
-            ),
-            VerticalNews(
-              assetName: AppImages.cat2,
-              title: Data.verticalNews[1].title,
-              description: Data.verticalNews[1].description,
-              hashTags: Data.verticalNews[1].category,
-            ),
-            VerticalNews(
-              assetName: AppImages.cat3,
-              title: Data.verticalNews[2].title,
-              description: Data.verticalNews[2].description,
-              hashTags: Data.verticalNews[2].category,
-            ),
+
+            const VerticalNewsSlider(),
 
             const SeeAllNews(title: "Latest News"),
 
-            SizedBox(
-              height: size.height * 0.3,
-              width: size.width * 1,
-              child: ListView.builder(
-                itemCount: Data.postData.length,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  final post = Data.latestNews[index];
-                  return CustomBorderPosts(
-                    imagePath: post.imagePath,
-                    category: post.category,
-                    description: post.description,
-                  );
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Text(
-                "Croma opens 58 outlets in 6, Croma retails more than 16,000",
-                style: TextStyle(fontWeight: FontWeight.w400),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Text(
-                "These companies created a lot of hype when they listed on the...",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: Colors.grey.shade700,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Text(
-                "Select Citywalk opens 4 new stores in June",
-                style: TextStyle(fontWeight: FontWeight.w400),
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Text(
-                "These companies created a lot of hype when they listed on the...",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: Colors.grey.shade700,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
+            const LatestNewsData(),
+            ListView.builder(
+              itemCount: Data.newsList.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                final item = Data.newsList[index];
+                return NameNews(title: item.title, subtitle: item.subtitle);
+              },
             ),
             const Center(child: Text("- Advertisement -")),
             Center(
