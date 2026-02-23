@@ -1,6 +1,6 @@
 class AppImages {
-  static const String pngPath = "/images";
-  static const String svgPath = "/svg";
+  static const String pngPath = "assets/images";
+  static const String svgPath = "assets/svg";
 
   //svg files
   static const String logo = "$pngPath/logo.png";

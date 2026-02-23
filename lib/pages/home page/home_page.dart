@@ -155,11 +155,12 @@ class HomePage extends StatelessWidget {
                         margin: const EdgeInsets.all(8),
                         height: size.height * 0.1,
                         width: size.width * 0.3,
+                        clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           image: const DecorationImage(
                             image: AssetImage(AppImages.red1),
-                            fit: BoxFit.contain,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -179,11 +180,12 @@ class HomePage extends StatelessWidget {
                         margin: const EdgeInsets.all(8),
                         height: size.height * 0.1,
                         width: size.width * 0.3,
+                        clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           image: const DecorationImage(
                             image: AssetImage(AppImages.red2),
-                            fit: BoxFit.contain,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -203,11 +205,12 @@ class HomePage extends StatelessWidget {
                         margin: const EdgeInsets.all(8),
                         height: size.height * 0.1,
                         width: size.width * 0.3,
+                        clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           image: const DecorationImage(
                             image: AssetImage(AppImages.red3),
-                            fit: BoxFit.contain,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -789,7 +792,6 @@ class HomePage extends StatelessWidget {
                 },
               ),
             ),
-            const SizedBox(height: 200),
           ],
         ),
       ),
