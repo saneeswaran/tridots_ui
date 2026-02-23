@@ -6,9 +6,15 @@ import 'package:tridos_task/pages/home%20page/components/head_news.dart';
 import 'package:tridos_task/pages/home%20page/components/home_app_bar.dart';
 import 'package:tridos_task/pages/home%20page/components/latest_news_data.dart';
 import 'package:tridos_task/pages/home%20page/components/news_name.dart';
+import 'package:tridos_task/pages/home%20page/components/research_news_data.dart';
 import 'package:tridos_task/pages/home%20page/components/see_all_news.dart';
 import 'package:tridos_task/pages/home%20page/components/story_items.dart';
+import 'package:tridos_task/pages/home%20page/components/text_news.dart';
+import 'package:tridos_task/pages/home%20page/components/trending_news_data.dart';
+import 'package:tridos_task/pages/home%20page/components/user_uploaded_news_content.dart';
+import 'package:tridos_task/pages/home%20page/components/vertical_image.dart';
 import 'package:tridos_task/pages/home%20page/components/vertical_news_slider.dart';
+import 'package:tridos_task/pages/home%20page/components/video_news_data.dart';
 import 'package:tridos_task/widgets/custom_border_posts.dart';
 import 'package:tridos_task/widgets/custom_horizontal_post.dart';
 import 'package:tridos_task/widgets/horizontal_news.dart';
@@ -61,148 +67,18 @@ class HomePage extends StatelessWidget {
             const SeeAllNews(title: "Web Serials"),
             const HeadNews(image: AppImages.web),
 
-            const ListTile(
-              leading: Icon(Icons.circle_outlined, color: Colors.red, size: 12),
-              title: Text(
-                "Cinema industry welcomes lowering GST rates...",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            const ListTile(
-              leading: Icon(Icons.circle_outlined, color: Colors.red, size: 12),
-              title: Text(
-                "Patanjali Ayurved to sell 7% stake in Patanjali",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            const ListTile(
-              leading: Icon(Icons.circle_outlined, color: Colors.red, size: 12),
-              title: Text(
-                "Select Citywalk opens 4 new stores in June",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            const ListTile(
-              leading: Icon(Icons.circle_outlined, color: Colors.red, size: 12),
-              title: Text(
-                "Govt imposes import restrictions on certain gold ",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            const ListTile(
-              leading: Icon(Icons.circle_outlined, color: Colors.red, size: 12),
-              title: Text(
-                "Joom Marketplace offers a global window for sellers",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Divider(color: Colors.grey.shade300, thickness: 1),
-            ),
-            SizedBox(
-              height: size.height * 0.3,
-              width: size.width * 1,
-              child: ListView.builder(
-                itemCount: Data.fData.length,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  final post = Data.fData[index];
-                  return CustomBorderPosts(
-                    imagePath: post.imagePath,
-                    category: post.category,
-                    description: post.description,
-                  );
-                },
-              ),
-            ),
+            const TextNews(),
+            const VideoNewsData(),
             const SeeAllNews(title: "Trending"),
 
-            SizedBox(
-              height: 55,
-              width: size.width * 1,
-              child: ListView.builder(
-                itemCount: Data.trending.length,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                physics: const AlwaysScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  final trend = Data.trending[index];
-                  return Container(
-                    padding: const EdgeInsets.all(4.0),
-                    margin: const EdgeInsets.all(6),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade300),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Center(child: Text(trend)),
-                  );
-                },
-              ),
-            ),
+            const TrendingNewsData(),
             const SeeAllNews(title: "Leaders Ink"),
             const SizedBox(height: 20),
-            SizedBox(
-              height: size.height * 0.35,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: Data.leaderData.length,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                itemBuilder: (context, index) {
-                  final item = Data.leaderData[index];
-                  return SizedBox(
-                    width: size.width * 0.7,
-                    child: ProfileImageContent(
-                      imagePath: item["image"],
-                      avatar: item["avatar"],
-                      title: item["title"],
-                      description: item["description"],
-                      name: item["name"],
-                    ),
-                  );
-                },
-              ),
-            ),
+            const UserUploadedNewsContent(),
 
             const SeeAllNews(title: "Research"),
 
-            SizedBox(
-              height: size.height * 0.16,
-              width: size.width * 1,
-              child: ListView.builder(
-                itemCount: Data.postData.length,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  final post = Data.rData[index];
-                  return CustomHorizontalPost(
-                    titleColor: Colors.black,
-                    descColor: Colors.red,
-                    titleWeight: FontWeight.bold,
-                    imagePath: post.imagePath,
-                    title: post.title,
-                    description: post.description,
-                  );
-                },
-              ),
-            ),
+            const ResearchNews(),
             const SizedBox(height: 10),
             SizedBox(
               height: size.height * 0.35,
@@ -218,24 +94,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SeeAllNews(title: "Fashion & Lifestyle"),
-            VerticalNews(
-              assetName: AppImages.v1,
-              title: Data.vData[0].title,
-              description: Data.vData[0].description,
-              hashTags: Data.vData[0].category,
-            ),
-            VerticalNews(
-              assetName: AppImages.v2,
-              title: Data.vData[1].title,
-              description: Data.vData[1].description,
-              hashTags: Data.vData[1].category,
-            ),
-            VerticalNews(
-              assetName: AppImages.v3,
-              title: Data.vData[2].title,
-              description: Data.vData[2].description,
-              hashTags: Data.vData[2].category,
-            ),
+            const VerticalImage(),
 
             Container(
               color: Colors.grey.shade200,

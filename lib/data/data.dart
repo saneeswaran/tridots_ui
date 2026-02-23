@@ -1,4 +1,5 @@
 import 'package:tridos_task/constants/app_images.dart';
+import 'package:tridos_task/model/beauty_news_model.dart';
 import 'package:tridos_task/model/news_item.dart';
 import 'package:tridos_task/model/post_model.dart';
 import 'package:tridos_task/model/story_item.dart';
@@ -221,6 +222,33 @@ class Data {
     StoryItem(
       image: AppImages.red3,
       title: "FreshToHome fixing a broken meat market retailing in...",
+    ),
+  ];
+
+  static final List<String> headlines = [
+    "Cinema industry welcomes lowering GST rates...",
+    "Patanjali Ayurved to sell 7% stake in Patanjali",
+    "Select Citywalk opens 4 new stores in June",
+    "Govt imposes import restrictions on certain gold",
+    "Joom Marketplace offers a global window for sellers",
+  ];
+
+  static List<BeautyNewsModel> beautyNews = [
+    BeautyNewsModel(
+      image: AppImages.b1,
+      title: "Sugar Cosmetics unveils its 200th brand-owned store",
+    ),
+    BeautyNewsModel(
+      image: AppImages.b2,
+      title: "Athiya Shetty becomes the face of Just Herbs’...",
+    ),
+    BeautyNewsModel(
+      image: AppImages.b3,
+      title: "Indian stars dazzle at Cannes 2023",
+    ),
+    BeautyNewsModel(
+      image: AppImages.b4,
+      title: "Recode Studios to expand footprint with 5 store...",
     ),
   ];
 }
