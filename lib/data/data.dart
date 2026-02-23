@@ -2,8 +2,11 @@ import 'package:tridos_task/constants/app_images.dart';
 import 'package:tridos_task/model/beauty_news_model.dart';
 import 'package:tridos_task/model/horizontal_news_model.dart';
 import 'package:tridos_task/model/news_item.dart';
+import 'package:tridos_task/model/picture_news_model.dart';
 import 'package:tridos_task/model/post_model.dart';
+import 'package:tridos_task/model/selection_news_model.dart';
 import 'package:tridos_task/model/story_item.dart';
+import 'package:tridos_task/pages/home%20page/components/simple_horizontal_news_model.dart';
 
 class Data {
   static const List<String> categoryData = [
@@ -281,6 +284,80 @@ class Data {
       category: "#Fashion",
       title: "Fashion brand icons: Shailesh Chaturvedi of Arvind Fashions",
       description: "The Gucci loafer has been a signature style for 70 years.",
+    ),
+  ];
+
+  static List<SimpleHorizontalNewsModel> smallHorizontalNews = [
+    SimpleHorizontalNewsModel(
+      image: AppImages.s1,
+      cat1: "Select Citywalk",
+      cat2: "Lifestyle",
+      category: "#Fashion",
+      title: "Select Citywalk opens 4 new stores in June",
+      description:
+          "The new stores opened at Select Citywalk include Choko la, Raymond",
+    ),
+    SimpleHorizontalNewsModel(
+      image: AppImages.s2,
+      cat1: "Infiniti Mall",
+      cat2: "news",
+      category: "#Fashion",
+      title: "Infiniti Mall collaborates with T-Series & PVR Inox to unveil..",
+      description:
+          "Constructed by Rubik’s Cubes mosaic artist Selwyn Santmajor",
+    ),
+    SimpleHorizontalNewsModel(
+      image: AppImages.s3,
+      cat1: "Multimedia",
+      cat2: "news",
+      category: "#Fashion",
+      title: "DLF creating new retail space in Delhi for France’s Galeries..",
+      description:
+          "DLF is earmarking space for the luxury retailer between two of its top-end",
+    ),
+  ];
+
+  static List<PictureNewsModel> pictureNews = [
+    PictureNewsModel(
+      image: AppImages.p1,
+      title: "Simplifying Retail Industry Compliance Management",
+    ),
+    PictureNewsModel(
+      image: AppImages.p2,
+      title: "ABFRL’s ethnic wear brand Jaypore enters Hyderabad",
+    ),
+    PictureNewsModel(
+      image: AppImages.p3,
+      title: "Mensa Brands brings home décor brand Folkulture to India",
+    ),
+  ];
+
+  static List<String> soTabs = ["E-commerce", "People", "D2C"];
+
+  static List<SectionNewsModel> soNews = [
+    SectionNewsModel(
+      image: AppImages.so1,
+      cat1: "Lifestyle",
+      cat2: "Fashion",
+      category: "#Fashion",
+      title: "Ecom Express appoints Ajay Chitkara",
+      description: "Chitkara, who is at present serving as...",
+    ),
+    SectionNewsModel(
+      image: AppImages.so2,
+      cat1: "Lifestyle",
+      cat2: "Fashion",
+      category: "#Fashion",
+      title: "DTDC sets up super hub",
+      description: "Spread over 1,75,000 square feet of space",
+    ),
+    SectionNewsModel(
+      image: AppImages.so3,
+      cat1: "Lifestyle",
+      cat2: "Fashion",
+      category: "#Fashion",
+      title: "KSH Distriparks bolsters its fleet",
+      description: "With the addition of new vehicles, the...",
     ),
   ];
 }
