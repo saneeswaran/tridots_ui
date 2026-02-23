@@ -7,6 +7,7 @@ import 'package:tridos_task/pages/home%20page/components/home_app_bar.dart';
 import 'package:tridos_task/pages/home%20page/components/latest_news_data.dart';
 import 'package:tridos_task/pages/home%20page/components/news_name.dart';
 import 'package:tridos_task/pages/home%20page/components/see_all_news.dart';
+import 'package:tridos_task/pages/home%20page/components/story_items.dart';
 import 'package:tridos_task/pages/home%20page/components/vertical_news_slider.dart';
 import 'package:tridos_task/widgets/custom_border_posts.dart';
 import 'package:tridos_task/widgets/custom_horizontal_post.dart';
@@ -55,105 +56,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            Container(
-              margin: const EdgeInsets.all(12),
-              padding: const EdgeInsets.all(16),
-              color: const Color(0xffFFEDEF),
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: Image.asset(AppImages.ir),
-                    title: const Text(
-                      "IR Times",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: const Text("Top 3 Stories of the day"),
-                    trailing: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'See more',
-                        style: TextStyle(fontSize: 10),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        height: size.height * 0.1,
-                        width: size.width * 0.3,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: const DecorationImage(
-                            image: AssetImage(AppImages.red1),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          "8 retail companies headed by women, These brands are not just famous ...",
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: Colors.grey.shade700),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        height: size.height * 0.1,
-                        width: size.width * 0.3,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: const DecorationImage(
-                            image: AssetImage(AppImages.red2),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          "Joom Marketplace offers a global window for sellers...",
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: Colors.grey.shade700),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        height: size.height * 0.1,
-                        width: size.width * 0.3,
-                        clipBehavior: Clip.antiAlias,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: const DecorationImage(
-                            image: AssetImage(AppImages.red3),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          "FreshToHome fixing a broken meat market retailing in...",
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(color: Colors.grey.shade700),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            const StoryItems(),
 
             const SeeAllNews(title: "Web Serials"),
             const HeadNews(image: AppImages.web),

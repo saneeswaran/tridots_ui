@@ -1,6 +1,7 @@
 import 'package:tridos_task/constants/app_images.dart';
-import 'package:tridos_task/data/news_item.dart';
-import 'package:tridos_task/data/post_model.dart';
+import 'package:tridos_task/model/news_item.dart';
+import 'package:tridos_task/model/post_model.dart';
+import 'package:tridos_task/model/story_item.dart';
 
 class Data {
   static const List<String> categoryData = [
@@ -204,6 +205,22 @@ class Data {
       title: "Select Citywalk opens 4 new stores in June",
       subtitle:
           "These companies created a lot of hype when they listed on the...",
+    ),
+  ];
+
+  static final stories = [
+    StoryItem(
+      image: AppImages.red1,
+      title:
+          "8 retail companies headed by women, These brands are not just famous ...",
+    ),
+    StoryItem(
+      image: AppImages.red2,
+      title: "Joom Marketplace offers a global window for sellers...",
+    ),
+    StoryItem(
+      image: AppImages.red3,
+      title: "FreshToHome fixing a broken meat market retailing in...",
     ),
   ];
 }
