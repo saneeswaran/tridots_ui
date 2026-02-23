@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tridos_task/constants/app_images.dart';
 import 'package:tridos_task/data/data.dart';
+import 'package:tridos_task/pages/home%20page/components/beauty_wellness_section.dart';
 import 'package:tridos_task/pages/home%20page/components/category_list.dart';
+import 'package:tridos_task/pages/home%20page/components/food_and_beverage.dart';
 import 'package:tridos_task/pages/home%20page/components/head_news.dart';
 import 'package:tridos_task/pages/home%20page/components/home_app_bar.dart';
 import 'package:tridos_task/pages/home%20page/components/latest_news_data.dart';
@@ -96,158 +98,11 @@ class HomePage extends StatelessWidget {
             const SeeAllNews(title: "Fashion & Lifestyle"),
             const VerticalImage(),
 
-            Container(
-              color: Colors.grey.shade200,
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  const SeeAllNews(title: "Beauty & Wellness"),
-
-                  ListTile(
-                    title: RichText(
-                      text: const TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Beauty ",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                          TextSpan(
-                            text: "●",
-                            style: TextStyle(color: Colors.black, fontSize: 5),
-                          ),
-                          TextSpan(
-                            text: " News",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                    subtitle: const Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: Text(
-                        "Sugar Cosmetics unveils its 200th brand-owned store",
-                      ),
-                    ),
-
-                    trailing: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.asset(AppImages.b1),
-                    ),
-                  ),
-                  ListTile(
-                    title: RichText(
-                      text: const TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Beauty ",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                          TextSpan(
-                            text: "●",
-                            style: TextStyle(color: Colors.black, fontSize: 5),
-                          ),
-                          TextSpan(
-                            text: " News",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                    subtitle: const Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: Text(
-                        "Athiya Shetty becomes the face of Just Herbs’...",
-                      ),
-                    ),
-
-                    trailing: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.asset(AppImages.b2),
-                    ),
-                  ),
-                  ListTile(
-                    title: RichText(
-                      text: const TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Beauty ",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                          TextSpan(
-                            text: "●",
-                            style: TextStyle(color: Colors.black, fontSize: 5),
-                          ),
-                          TextSpan(
-                            text: " News",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                    subtitle: const Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: Text("Indian stars dazzle at Cannes 2023"),
-                    ),
-
-                    trailing: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.asset(AppImages.b3),
-                    ),
-                  ),
-                  ListTile(
-                    title: RichText(
-                      text: const TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Beauty ",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                          TextSpan(
-                            text: "●",
-                            style: TextStyle(color: Colors.black, fontSize: 5),
-                          ),
-                          TextSpan(
-                            text: " News",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                    subtitle: const Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: Text(
-                        "Recode Studios to expand footprint with 5 store...",
-                      ),
-                    ),
-
-                    trailing: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.asset(AppImages.b4),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const BeautyWellnessSection(),
 
             const SeeAllNews(title: "Food & Beverage"),
 
-            SizedBox(
-              height: size.height * 0.3,
-              width: size.width * 1,
-              child: ListView.builder(
-                itemCount: Data.postData.length,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  final post = Data.fooData[index];
-                  return CustomBorderPosts(
-                    imagePath: post.imagePath,
-                    category: post.category,
-                    description: post.description,
-                  );
-                },
-              ),
-            ),
+            const FoodAndBeaverage(),
 
             Container(
               padding: const EdgeInsets.all(8.0),

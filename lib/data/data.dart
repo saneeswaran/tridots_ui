@@ -1,5 +1,6 @@
 import 'package:tridos_task/constants/app_images.dart';
 import 'package:tridos_task/model/beauty_news_model.dart';
+import 'package:tridos_task/model/horizontal_news_model.dart';
 import 'package:tridos_task/model/news_item.dart';
 import 'package:tridos_task/model/post_model.dart';
 import 'package:tridos_task/model/story_item.dart';
@@ -249,6 +250,37 @@ class Data {
     BeautyNewsModel(
       image: AppImages.b4,
       title: "Recode Studios to expand footprint with 5 store...",
+    ),
+  ];
+
+  static List<String> topTabs = ["E-commerce", "People", "D2C"];
+
+  static List<HorizontalNewsModel> horizontalNews = [
+    HorizontalNewsModel(
+      image: AppImages.t1,
+      cat1: "Fashion",
+      cat2: "Food",
+      category: "#Fashion",
+      title: "What makes Fila unique is its attitude and...",
+      description:
+          "The singer-songwriter has been spotted in the hybrid garment...",
+    ),
+    HorizontalNewsModel(
+      image: AppImages.t2,
+      cat1: "Shailesh",
+      cat2: "Fashion",
+      category: "#Fashion",
+      title: "Fashion brand icons: Shailesh Chaturvedi of Arvind Fashions",
+      description:
+          "Fashion brand icons: Shailesh Chaturvedi of Arvind Fashions",
+    ),
+    HorizontalNewsModel(
+      image: AppImages.t3,
+      cat1: "Fashion",
+      cat2: "Food",
+      category: "#Fashion",
+      title: "Fashion brand icons: Shailesh Chaturvedi of Arvind Fashions",
+      description: "The Gucci loafer has been a signature style for 70 years.",
     ),
   ];
 }
